@@ -1,12 +1,9 @@
-const createMathProblems = (index1Max, index2Max) => {
-  let index1 = 0;
-  let index2 = 0;
-  let problems = [];
-  for (index1; index1 <= index1Max; index1++) {
-    problems.push(index1 + " x " + index2 + " = ");
-    index2++;
-    for (index2; index2 <= index2Max; index2++) {
-      problems.push(index1 + " x " + index2 + " = ");
+const createMathProblems = () => {
+  let problems = {};
+  for (let i = 1; i < 10; i++) {
+    for (let j = 1; j < 10; j++) {
+      let problem = `${i} X ${j}`;
+      problems[problem] = i * j;
     }
   }
   return problems;
@@ -27,5 +24,5 @@ const deleteOneMathProblem = (index) => {
   mathProblems.splice(index, 1);
 };
 
-const mathProblems = createMathProblems(9, 9);
-console.log(generateOneMathProblem());
+const mathProblems = createMathProblems();
+console.log(mathProblems);
